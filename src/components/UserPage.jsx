@@ -1,8 +1,9 @@
 import React from 'react'
+import style from "./../css/UserPage.module.css";
 
 const UserPage = () => {
   return (
-    <div>
+    <div className={style.container}>
       
     </div>
   )

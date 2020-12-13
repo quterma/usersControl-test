@@ -1,12 +1,11 @@
-import { Header } from "antd/lib/layout/layout";
 import React from "react";
-import "./App.css";
+import style from "./css/App.module.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
 
 function App() {
 	return (
-		<div className="wrapper">
+		<div className={style.container}>
 			<Header />
 			<Main />
 		</div>

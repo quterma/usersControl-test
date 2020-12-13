@@ -1,0 +1,15 @@
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex: 1;
+	margin-right: 40px;
+	height: 2.2rem;
+}
+
+.divider {
+	height: 15px;
+	width: 2px;
+	border-right: 2px solid rgba(26, 25, 25, 0.5);
+	margin: 0 2px;
+}

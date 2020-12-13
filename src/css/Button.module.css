@@ -1,0 +1,31 @@
+.container {
+	background-color: inherit;
+	border-radius: 2px;
+	border: none;
+	outline: none;
+	font-size: 1.3rem;
+	transition: 0.1s ease;
+	color: rgb(0, 120, 212);
+	padding: 0.2rem 0.6rem;
+	cursor: pointer;
+	height: 100%;
+}
+
+.container:hover {
+	background-color: rgba(87, 82, 82, 0.1);
+}
+
+.container:active {
+	color: rgba(48, 35, 35, 0.4);
+	background-color: rgba(87, 82, 82, 0.1);
+}
+
+.icon {
+	color: inherit;
+}
+
+.disabled {
+	font-weight: 600;
+	color: rgba(48, 35, 35, 0.4);
+	background-color: rgba(87, 82, 82, 0.1);
+}

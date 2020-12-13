@@ -1,9 +1,10 @@
 import React from 'react'
+import style from "./../css/UserString.module.css";
 
-const UserString = () => {
+const UserString = ({ firstName, secondName, lastName }) => {
   return (
-    <div>
-      
+    <div className={style.container}>
+      {firstName} {secondName} {lastName}
     </div>
   )
 }

@@ -1,0 +1,30 @@
+.container {
+	font-weight: 300;
+	padding: 0 0 0 4px;
+	color: rgb(50, 49, 48);
+	background-color: rgb(255, 255, 255);
+	display: flex;
+	align-items: center;
+	border-radius: 2px;
+	border: 1px solid rgb(96, 94, 92);
+	height: 2.3rem;
+	width: 200px;
+}
+
+.input {
+	padding: 0px 0px 0.5px;
+	background-color: transparent;
+	border: none;
+	color: rgb(50, 49, 48);
+	flex: 1 1 0px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.container:hover {
+	border: 1px solid rgb(54, 52, 52);
+}
+
+.input:hover ~ .container:active {
+	border: 1px solid rgb(0, 90, 158);
+}
