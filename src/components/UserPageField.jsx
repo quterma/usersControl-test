@@ -1,11 +1,12 @@
 import React from 'react'
 import style from "./../css/UserPageField.module.css";
 
-const UserPageField = () => {
+const UserPageField = ({ propertyKey, propertyValue }) => {
+
   return (
-    <div className={style.container}>
-      
-    </div>
+    <li className={style.container}>
+      {propertyKey}: {propertyValue}
+    </li>
   )
 }
 

@@ -1,11 +1,10 @@
 import React from 'react';
 import UserString from './UserString';
 import { useSelector } from 'react-redux';
-import { selectFilter, selectUsers } from '../redux/usersControlSlice';
+import { selectFilter } from '../redux/usersControlSlice';
 
-const UserList = () => {
+const UsersList = ({ users }) => {
   const filter = useSelector(selectFilter);
-  const users = useSelector(selectUsers);
 
   // filtering and mapping users
   function filterUsers(obj, value) {
@@ -30,4 +29,4 @@ const UserList = () => {
   return mapped;
 }
 
-export default UserList;
+export default UsersList;

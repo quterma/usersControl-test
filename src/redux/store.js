@@ -9,8 +9,8 @@ const persistedState = loadState();
 export const store = configureStore({
 	reducer: {
 		usersControl: usersControlReducer,
-		preloadedState: persistedState,
 	},
+	preloadedState: persistedState,
 });
 
 // subscribes for setting state into localStorage

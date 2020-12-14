@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import style from "./../css/Main.module.css";
-import { useDispatch, useSelector } from 'react-redux';
-import { setMainMode, selectFilter, selectMainMode, selectUsers } from '../redux/usersControlSlice';
-import UserList from './UserList';
+import { useSelector } from 'react-redux';
+import { selectUsers } from '../redux/usersControlSlice';
+import UsersList from './UsersList';
+import UserPage from './UserPage';
+import UserForm from './UserForm';
 
-const Main = () => {
+const Main = ({ mainMode }) => {
+  const users = useSelector(selectUsers);
+  const userId = mainMode.id && mainMode.id;
   
   return (
     <main className={style.container}>
-      <UserList />
+      {mainMode.mode === "usersList" && <UsersList users={users} />}
+      {mainMode.mode === "userPage" && <UserPage user={users[userId]} />}
+      {mainMode.mode === "userForm" && <UserForm user={users[userId]} id={userId} />}
     </main>
   )
 }

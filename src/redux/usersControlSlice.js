@@ -50,9 +50,8 @@ export const usersControlSlice = createSlice({
 		},
 
 		mainMode: {
-			usersList: true,
-			userPage: false,
-			userForm: false,
+			// usersList | userPage | userForm
+			mode: "usersList",
 			id: null,
 		},
 	},
@@ -60,19 +59,29 @@ export const usersControlSlice = createSlice({
 		createUser: state => {
 			const id = uuid();
 			const created = date();
-			state.users[id] = { created };
-			state.mainMode = { usersList: false, userPage: false, userForm: true, id };
+			state.users[id] = {
+				login: "",
+				email: "",
+				password: "",
+				phone: "",
+				firstName: "",
+				secondName: "",
+				lastName: "",
+				status: "",
+				created,
+				updated: "",
+			};
+			state.mainMode = { mode: "userForm", id };
 		},
 		updateUser: (state, action) => {
-			const { id } = action.payload;
+			const id = state.mainMode.id;
 			const updated = date();
 			state.users[id] = { ...state.users[id], ...action.payload, updated };
-			state.mainMode = { usersList: false, userPage: true, userForm: false, id };
+			// state.mainMode = { usersList: false, userPage: true, userForm: false, id };
 		},
 		deleteUser: (state, action) => {
-			const { id } = action.payload;
+			const id = state.mainMode.id;
 			delete state.users[id];
-			state.mainMode = { usersList: true, userPage: false, userForm: false, id: null };
 		},
 		setFilter: (state, action) => {
 			state.filter = { ...state.filter, ...action.payload };
