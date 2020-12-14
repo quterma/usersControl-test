@@ -49,8 +49,10 @@ export const usersControlSlice = createSlice({
 			search: null,
 		},
 
-		editMode: {
-			isEdit: false,
+		mainMode: {
+			usersList: true,
+			userPage: false,
+			userForm: false,
 			id: null,
 		},
 	},
@@ -59,37 +61,30 @@ export const usersControlSlice = createSlice({
 			const id = uuid();
 			const created = date();
 			state.users[id] = { created };
-			state.editMode = { isEdit: true, id };
+			state.mainMode = { usersList: false, userPage: false, userForm: true, id };
 		},
 		updateUser: (state, action) => {
 			const { id } = action.payload;
 			const updated = date();
 			state.users[id] = { ...state.users[id], ...action.payload, updated };
+			state.mainMode = { usersList: false, userPage: true, userForm: false, id };
 		},
 		deleteUser: (state, action) => {
 			const { id } = action.payload;
 			delete state.users[id];
+			state.mainMode = { usersList: true, userPage: false, userForm: false, id: null };
 		},
 		setFilter: (state, action) => {
 			state.filter = { ...state.filter, ...action.payload };
 		},
-		activateEditMode: (state, action) => {
-			state.editMode = { isEdit: true, id: action.payload };
-		},
-		deactivateEditMode: state => {
-			state.editMode = { isEdit: false, id: null };
+
+		setMainMode: (state, action) => {
+			state.mainMode = { ...state.mainMode, ...action.payload };
 		},
 	},
 });
 
-export const {
-	createUser,
-	updateUser,
-	deleteUser,
-	setFilter,
-	activateEditMode,
-	deactivateEditMode,
-} = usersControlSlice.actions;
+export const { createUser, updateUser, deleteUser, setFilter, setMainMode } = usersControlSlice.actions;
 
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
@@ -104,6 +99,6 @@ export const {
 
 export const selectUsers = state => state.usersControl.users;
 export const selectFilter = state => state.usersControl.filter;
-export const selectEditMode = state => state.usersControl.editMode;
+export const selectMainMode = state => state.usersControl.mainMode;
 
 export default usersControlSlice.reducer;
