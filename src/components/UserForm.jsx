@@ -26,7 +26,6 @@ const UserForm = ({ user }) => {
   
   return (
     <div className={style.container}>
-      
       <Formik initialValues={user} onSubmit={onHandleSubmit} validationSchema={validationSchema}>
         <Form>
           <Field name="login" placeholder="login..." component={CustomInput} />
@@ -46,7 +45,6 @@ const UserForm = ({ user }) => {
           <button className={style.button} type="submit">Submit</button>
         </Form>
       </Formik>
-
     </div>
   );
 }

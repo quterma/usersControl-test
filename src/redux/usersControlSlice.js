@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import date from "./../utils/date";
-import uuid from "./../utils/date";
+import uuid from "./../utils/uuid";
 
 export const usersControlSlice = createSlice({
 	name: "usersControl",
@@ -79,7 +79,7 @@ export const usersControlSlice = createSlice({
 			state.users[id] = { ...state.users[id], ...action.payload, updated };
 			// state.mainMode = { usersList: false, userPage: true, userForm: false, id };
 		},
-		deleteUser: (state, action) => {
+		deleteUser: state => {
 			const id = state.mainMode.id;
 			delete state.users[id];
 		},

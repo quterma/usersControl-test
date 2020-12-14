@@ -1,3 +1,3 @@
-export default function date() {
-	"_" + Math.random().toString(36).substr(2, 9);
+export default function uuid() {
+	return "_" + Math.random().toString(36).substr(2, 9);
 }

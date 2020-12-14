@@ -12,9 +12,9 @@ const UserPage = ({ user }) => {
   });
   
   return (
-    <ul className={style.container}>
+    <div className={style.container}>
       {mapped}
-    </ul>
+    </div>
   )
 }
 

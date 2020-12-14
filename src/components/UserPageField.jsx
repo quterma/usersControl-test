@@ -4,9 +4,9 @@ import style from "./../css/UserPageField.module.css";
 const UserPageField = ({ propertyKey, propertyValue }) => {
 
   return (
-    <li className={style.container}>
-      {propertyKey}: {propertyValue}
-    </li>
+    <div className={style.container}>
+      <div className={style.left}>{propertyKey}:</div><div className={style.right}>{propertyValue}</div>
+    </div>
   )
 }
 

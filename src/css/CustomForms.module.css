@@ -1,13 +1,35 @@
-.textareaWrapper,
 .inputWrapper {
-	margin: 10px;
+	width: 100%;
+	font-size: 1.8rem;
+	margin-top: 0.8rem;
 }
 
-.textareaError,
 .inputError {
 	border: 1px solid red;
 }
 
 .textError {
 	color: red;
+}
+
+.label {
+	font-size: 1.6rem;
+}
+
+.input {
+	flex: 1 1 0px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 300;
+	padding: 0 0 0 4px;
+	color: rgb(50, 49, 48);
+	background-color: rgb(255, 255, 255);
+	border-radius: 2px;
+	border: 1px solid rgb(96, 94, 92);
+	height: 2.3rem;
+	min-width: 200px;
+}
+
+.input:hover ~ .container:active {
+	border: 1px solid rgb(0, 90, 158);
 }

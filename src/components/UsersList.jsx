@@ -8,12 +8,13 @@ const UsersList = ({ users }) => {
 
   // filtering and mapping users
   function filterUsers(obj, value) {
-    function filterByStatus(status) {
+    const filterByStatus = status => {
       return Object.keys(obj).reduce((acc, val) => obj[val].status === status ? { ...acc, [val]: obj[val] } : acc, {});
     }
-    function filterBySearch(search) {
+    const filterBySearch = search => {
       return Object.keys(obj).reduce((acc, val) => Object.values(obj[val]).map(v => String(v).toLowerCase()).includes(search) ? { ...acc, [val]: obj[val] } : acc, {});
     }
+    
     if (value.search) return filterBySearch(value.search);
     if (value.status === "all") return obj;
     if (value.status) return filterByStatus(value.status);

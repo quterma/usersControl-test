@@ -5,4 +5,5 @@
 	align-items: center;
 	flex: 1;
 	padding: 2rem 10rem;
+	overflow-y: auto;
 }

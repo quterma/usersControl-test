@@ -1,0 +1,12 @@
+.container {
+	min-width: 280px;
+	width: 80%;
+	font-size: 2rem;
+	border: 1px solid rgba(29, 27, 27, 0.4);
+	border-radius: 0.2rem;
+	padding: 1rem;
+}
+
+.button {
+	margin-top: 1rem;
+}

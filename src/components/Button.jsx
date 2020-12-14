@@ -7,10 +7,11 @@ import style from "./../css/Button.module.css";
 // "fas fa-window-close" close
 // "fas fa-search" search
 
-const Button = ({ onHandleClick, icon, caption, disabled }) => {
+const Button = ({ onHandleClick, icon, caption, disabled, big }) => {
+
   return (
     <button title={caption} className={`${style.container} ${disabled && style.disabled}`} onClick={onHandleClick}>
-      {icon && <i className={`${style.icon} ${icon}`}></i>}
+      {icon && <i className={`${style.icon} ${icon} ${big && style.big}`}></i>}
       {caption && caption}
     </button>
   )
