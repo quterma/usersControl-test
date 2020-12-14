@@ -13,3 +13,10 @@
 	border-right: 2px solid rgba(26, 25, 25, 0.5);
 	margin: 0 2px;
 }
+
+@media (max-width: 480px) {
+	.container {
+		margin: 1rem 0;
+		flex: 0;
+	}
+}

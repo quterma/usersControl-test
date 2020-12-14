@@ -12,7 +12,7 @@ export const CustomInput = ({
 }) => (
 	<div className={styles.inputWrapper}>
 		<label className={styles.label}>
-			{field.name + ": "}
+			<div className={styles.caption}>{field.name + ": "}</div>
 			<input {...field} {...props} className={`${styles.input} ${touched[field.name] && errors[field.name] && styles.inputError}`} />
 		</label>
 	</div>

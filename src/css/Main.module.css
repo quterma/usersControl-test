@@ -7,3 +7,15 @@
 	padding: 2rem 10rem;
 	overflow-y: auto;
 }
+
+@media (max-width: 480px) {
+	.container {
+		padding: 1rem;
+	}
+}
+
+@media (max-width: 1024px) {
+	.container {
+		padding: 1rem 3rem;
+	}
+}

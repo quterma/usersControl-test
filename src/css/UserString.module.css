@@ -6,3 +6,9 @@
 	border-bottom: 1px solid rgba(29, 27, 27, 0.4);
 	cursor: pointer;
 }
+
+@media (max-width: 480px) {
+	.container {
+		font-size: 1.5rem;
+	}
+}

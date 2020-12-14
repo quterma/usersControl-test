@@ -1,12 +1,42 @@
 .container {
 	min-width: 280px;
 	width: 80%;
-	font-size: 2rem;
 	border: 1px solid rgba(29, 27, 27, 0.4);
 	border-radius: 0.2rem;
 	padding: 1rem;
 }
 
 .button {
-	margin-top: 1rem;
+	margin-top: 1.5rem;
+	background-color: rgba(80, 63, 63, 0.185);
+	border-radius: 2px;
+	border: 1px solid rgba(107, 101, 101, 0.397);
+	outline: none;
+	font-size: 1.3rem;
+	transition: 0.1s ease;
+	color: rgb(0, 120, 212);
+	padding: 0.2rem 0.6rem;
+	cursor: pointer;
+	height: 100%;
+}
+
+.button:hover {
+	background-color: rgba(87, 82, 82, 0.1);
+}
+
+.button:active {
+	color: rgba(48, 35, 35, 0.4);
+	background-color: rgba(87, 82, 82, 0.1);
+}
+
+@media (max-width: 480px) {
+	.container {
+		width: 100%;
+	}
+}
+
+@media (max-width: 1024px) {
+	.container {
+		width: 100%;
+	}
 }
