@@ -14,7 +14,7 @@ const Main = ({ mainMode }) => {
     <main className={style.container}>
       {mainMode.mode === "usersList" && <UsersList users={users} />}
       {mainMode.mode === "userPage" && <UserPage user={users[userId]} />}
-      {mainMode.mode === "userForm" && <UserForm user={users[userId]} id={userId} />}
+      {mainMode.mode === "userForm" && <UserForm user={users[userId]} />}
     </main>
   )
 }
